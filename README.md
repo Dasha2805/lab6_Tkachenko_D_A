@@ -1,4 +1,3 @@
-markdown
 # Lab6: Новостной портал (Frontend)
 
 React-приложение для новостного API.
@@ -21,18 +20,62 @@ npm run dev
 API
 Приложение работает с API по адресу http://localhost:8000/api/v1
 Если API недоступно - автоматически включает демо-режим.# React + Vite
+=======
+Lab6: Новостной портал (Frontend)
+React-приложение для новостного API. Разработано с использованием Vite.
+045a762fae0de1d41a139f6ade4c0f8f58f64484
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Функционал
+📰 Главная страница — список всех новостей с заголовками, авторами и датами
 
-Currently, two official plugins are available:
+📄 Страница новости — полный текст новости и комментарии к ней
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🔐 Авторизация — вход под разными ролями (admin/author/user)
 
-## React Compiler
+👑 Ролевая модель:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+USER — может просматривать новости и оставлять комментарии
 
-## Expanding the ESLint configuration
+VERIFIED_AUTHOR — может создавать новости
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ADMIN — может удалять любые новости и комментарии
+
+💬 Комментарии — добавление и удаление (для админов)
+
+🛠 Технологии
+React 19
+
+Vite 8
+
+Axios для запросов к API
+
+React Hooks (useState, useEffect)
+
+⚙️ Запуск проекта
+bash
+# Установка зависимостей
+npm install
+
+# Запуск в режиме разработки
+npm run dev
+После запуска откройте http://localhost:5173
+
+🔌 Работа с API
+Приложение пытается подключиться к API по адресу:
+
+text
+http://localhost:8000/api/v1
+Если API недоступно, автоматически включается демо-режим с тестовыми данными. В этом режиме все функции приложения (авторизация, комментарии, роли) продолжают работать для демонстрации интерфейса.
+
+📁 Структура проекта
+text
+src/
+├── App.jsx         # Основной компонент приложения
+├── main.jsx        # Точка входа
+└── index.css       # Стили
+👤 Тестовые аккаунты
+Роль	Email	Пароль
+Администратор	admin@example.com	любой
+Верифицированный автор	author@example.com	любой
+Обычный пользователь	user@example.com	любой
+Примечание: при недоступности API авторизация работает в демо-режиме с любым паролем.
